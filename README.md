@@ -42,6 +42,8 @@ After running the Docker command, you should have containers as below:
 - Queue
 - Node
 
+Check out the documentation [Docker Hub](https://hub.docker.com/)
+
 ### Import the database
 
 In order to migrate the tables and setup the bare minimum structure for this app
