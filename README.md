@@ -5,10 +5,12 @@
 -   [Usage](#usage)
     -   [Setup your .env config file](#setup-your-env-config-file)
     -   [Install Laravel dependencies](#install-laravel-dependencies)
+    -   [Docker Configuration](#docker-configuration)
     -   [Import the database](#import-the-database)
     -   [Compile the front-end](#compile-the-front-end)
     -   [Launch the Laravel backend](#launch-the-Laravel-backend)
     -   [Telegram Channel Alert](#telegram-channel-alert)
+  
 
 ## Usage
 
@@ -22,6 +24,24 @@ Make sure to add the database configuration in your .env file such as database n
 
 In the root of your Laravel application, run the `php composer.phar install` (or `composer install`) command to install all of the framework's dependencies.
 
+### Docker Configuration
+
+- Firstly you need to install [Docker](https://docs.docker.com/engine/install/) in your computer.
+
+After Docker is installed, now you can run the following command for automatically to create containers image.
+
+`docker-compose down && docker-compose up -d`
+
+After running the Docker command, you should have containers as below:
+
+- PHP
+- PhpMyAdmin
+- Websocket
+- Database (mysql)
+- Redis
+- Queue
+- Node
+
 ### Import the database
 
 In order to migrate the tables and setup the bare minimum structure for this app
@@ -30,6 +50,8 @@ directory and run the following command
 
 - Ignore migrations
 - `create database name tecgos-cms-admin-template and import tecgos-cms-admin-template.sql file`
+
+*** Note: If you use docker database will create automatically, you need only import tecgos-cms-admin-template.sql file
 
 ### Compile the front-end
 
@@ -53,3 +75,5 @@ in your browser and you'll be ready to test out your new mosaic laravel app.
 ### Telegram Channel Alert
 
 -   [Config URL](https://medium.com/modulr/send-telegram-notifications-with-laravel-9-342cc87b406)
+
+
