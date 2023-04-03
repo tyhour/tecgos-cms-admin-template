@@ -1,0 +1,15 @@
+<div>
+    <label for="{{ $attributes['name'] }}"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ $attributes['title'] }} @if ($attributes['required'])
+            *
+        @endif
+    </label>
+    <input @if ($attributes['readonly']) readonly @endif type="{{ $attributes['type'] }}"
+        value="{{ $attributes['value'] }}" id="{{ $attributes['name'] }}" name="{{ $attributes['name'] }}"
+        @if ($attributes['model']) wire:model.defer="{{ $attributes['model'] }}" @endif
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        placeholder="{{ $attributes['placeholder'] }}" @if ($attributes['required']) required @endif>
+    @error($attributes['model'])
+        <p class="mt-2 text-sm text-red-600 dark:text-red-500">{{ $message }}</p>
+    @enderror
+</div>
